@@ -1,0 +1,6 @@
+c:\users\terminator\documents\visual studio 2013\Projects\RecusionRevision\RecusionRevision\bin\Debug\RecusionRevision.exe.config
+c:\users\terminator\documents\visual studio 2013\Projects\RecusionRevision\RecusionRevision\bin\Debug\RecusionRevision.exe
+c:\users\terminator\documents\visual studio 2013\Projects\RecusionRevision\RecusionRevision\bin\Debug\RecusionRevision.pdb
+c:\users\terminator\documents\visual studio 2013\Projects\RecusionRevision\RecusionRevision\obj\Debug\RecusionRevision.csprojResolveAssemblyReference.cache
+c:\users\terminator\documents\visual studio 2013\Projects\RecusionRevision\RecusionRevision\obj\Debug\RecusionRevision.exe
+c:\users\terminator\documents\visual studio 2013\Projects\RecusionRevision\RecusionRevision\obj\Debug\RecusionRevision.pdb
