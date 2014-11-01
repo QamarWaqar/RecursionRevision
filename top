@@ -1,0 +1,160 @@
+[33mcommit 6125e06359caa0b116ccc5dbbbf29d6928cb841e[m
+Author: QamarWaqar <qamogle@gmail.com>
+Date:   Thu Oct 16 08:37:41 2014 +0500
+
+    Recursion
+    
+    Just A Simple Revision.
+
+[1mdiff --git a/RecusionRevision.sln b/RecusionRevision.sln[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4c9e9e5[m
+[1m--- /dev/null[m
+[1m+++ b/RecusionRevision.sln[m
+[36m@@ -0,0 +1,22 @@[m
+[32m+[m[32m﻿[m
+[32m+[m[32mMicrosoft Visual Studio Solution File, Format Version 12.00[m
+[32m+[m[32m# Visual Studio Express 2013 for Windows Desktop[m
+[32m+[m[32mVisualStudioVersion = 12.0.30723.0[m
+[32m+[m[32mMinimumVisualStudioVersion = 10.0.40219.1[m
+[32m+[m[32mProject("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecusionRevision", "RecusionRevision\RecusionRevision.csproj", "{400E30A2-8C78-49DB-AED5-0D2EE8A92517}"[m
+[32m+[m[32mEndProject[m
+[32m+[m[32mGlobal[m
+[32m+[m	[32mGlobalSection(SolutionConfigurationPlatforms) = preSolution[m
+[32m+[m		[32mDebug|Any CPU = Debug|Any CPU[m
+[32m+[m		[32mRelease|Any CPU = Release|Any CPU[m
+[32m+[m	[32mEndGlobalSection[m
+[32m+[m	[32mGlobalSection(ProjectConfigurationPlatforms) = postSolution[m
+[32m+[m		[32m{400E30A2-8C78-49DB-AED5-0D2EE8A92517}.Debug|Any CPU.ActiveCfg = Debug|Any CPU[m
+[32m+[m		[32m{400E30A2-8C78-49DB-AED5-0D2EE8A92517}.Debug|Any CPU.Build.0 = Debug|Any CPU[m
+[32m+[m		[32m{400E30A2-8C78-49DB-AED5-0D2EE8A92517}.Release|Any CPU.ActiveCfg = Release|Any CPU[m
+[32m+[m		[32m{400E30A2-8C78-49DB-AED5-0D2EE8A92517}.Release|Any CPU.Build.0 = Release|Any CPU[m
+[32m+[m	[32mEndGlobalSection[m
+[32m+[m	[32mGlobalSection(SolutionProperties) = preSolution[m
+[32m+[m		[32mHideSolutionNode = FALSE[m
+[32m+[m	[32mEndGlobalSection[m
+[32m+[m[32mEndGlobal[m
+[1mdiff --git a/RecusionRevision.v12.suo b/RecusionRevision.v12.suo[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e73759f[m
+Binary files /dev/null and b/RecusionRevision.v12.suo differ
+[1mdiff --git a/RecusionRevision/App.config b/RecusionRevision/App.config[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8e15646[m
+[1m--- /dev/null[m
+[1m+++ b/RecusionRevision/App.config[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m﻿<?xml version="1.0" encoding="utf-8" ?>[m
+[32m+[m[32m<configuration>[m
+[32m+[m[32m    <startup>[m[41m [m
+[32m+[m[32m        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />[m
+[32m+[m[32m    </startup>[m
+[32m+[m[32m</configuration>[m
+\ No newline at end of file[m
+[1mdiff --git a/RecusionRevision/Program.cs b/RecusionRevision/Program.cs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..25c357c[m
+[1m--- /dev/null[m
+[1m+++ b/RecusionRevision/Program.cs[m
+[36m@@ -0,0 +1,35 @@[m
+[32m+[m[32m﻿using System;[m
+[32m+[m[32musing System.Collections.Generic;[m
+[32m+[m[32musing System.Linq;[m
+[32m+[m[32musing System.Text;[m
+[32m+[m[32musing System.Threading.Tasks;[m
+[32m+[m
+[32m+[m[32mnamespace RecusionRevision[m
+[32m+[m[32m{[m
+[32m+[m[32m    class Program[m
+[32m+[m[32m    {[m
+[32m+[m[32m        static int sI = 0;[m
+[32m+[m[32m        static void Main(string[] args)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            Console.WriteLine("Calling Object Recursion");[m
+[32m+[m[32m            Program p = new Program();[m
+[32m+[m[32m            p.func();[m
+[32m+[m[32m            // Now Caliing Static Recursion //[m
+[32m+[m[32m            sI = 0;[m
+[32m+[m[32m            Console.WriteLine("Now Calling Static Recursion Function");[m
+[32m+[m[32m            dunc();[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        void func()[m
+[32m+[m[32m        {[m
+[32m+[m[32m            if (sI == 3) { return; }[m
+[32m+[m[32m            if (sI >= 0) { Program p = new Program(); sI++; Console.WriteLine("Calling"); p.func(); Console.WriteLine("Returning"); }[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        static void dunc()[m
+[32m+[m[32m        {[m
+[32m+[m[32m            if (sI == 3) { return; }[m
+[32m+[m[32m            if (sI >= 0) { sI++; Console.WriteLine("Calling"); dunc(); Console.WriteLine("Returning"); }[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/RecusionRevision/Properties/AssemblyInfo.cs b/RecusionRevision/Properties/AssemblyInfo.cs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6d7f119[m
+[1m--- /dev/null[m
+[1m+++ b/RecusionRevision/Properties/AssemblyInfo.cs[m
+[36m@@ -0,0 +1,36 @@[m
+[32m+[m[32m﻿using System.Reflection;[m
+[32m+[m[32musing System.Runtime.CompilerServices;[m
+[32m+[m[32musing System.Runtime.InteropServices;[m
+[32m+[m
+[32m+[m[32m// General Information about an assembly is controlled through the following[m[41m [m
+[32m+[m[32m// set of attributes. Change these attribute values to modify the information[m
+[32m+[m[32m// associated with an assembly.[m
+[32m+[m[32m[assembly: AssemblyTitle("RecusionRevision")][m
+[32m+[m[32m[assembly: AssemblyDescription("")][m
+[32m+[m[32m[assembly: AssemblyConfiguration("")][m
+[32m+[m[32m[assembly: AssemblyCompany("")][m
+[32m+[m[32m[assembly: AssemblyProduct("RecusionRevision")][m
+[32m+[m[32m[assembly: AssemblyCopyright("Copyright ©  2014")][m
+[32m+[m[32m[assembly: AssemblyTrademark("")][m
+[32m+[m[32m[assembly: AssemblyCulture("")][m
+[32m+[m
+[32m+[m[32m// Setting ComVisible to false makes the types in this assembly not visible[m[41m [m
+[32m+[m[32m// to COM components.  If you need to access a type in this assembly from[m[41m [m
+[32m+[m[32m// COM, set the ComVisible attribute to true on that type.[m
+[32m+[m[32m[assembly: ComVisible(false)][m
+[32m+[m
+[32m+[m[32m// The following GUID is for the ID of the typelib if this project is exposed to COM[m
+[32m+[m[32m[assembly: Guid("564954e5-7d9c-417b-a05f-a1d8d1a5f6b2")][m
+[32m+[m
+[32m+[m[32m// Version information for an assembly consists of the following four values:[m
+[32m+[m[32m//[m
+[32m+[m[32m//      Major Version[m
+[32m+[m[32m//      Minor Version[m[41m [m
+[32m+[m[32m//      Build Number[m
+[32m+[m[32m//      Revision[m
+[32m+[m[32m//[m
+[32m+[m[32m// You can specify all the values or you can default the Build and Revision Numbers[m[41m [m
+[32m+[m[32m// by using the '*' as shown below:[m
+[32m+[m[32m// [assembly: AssemblyVersion("1.0.*")][m
+[32m+[m[32m[assembly: AssemblyVersion("1.0.0.0")][m
+[32m+[m[32m[assembly: AssemblyFileVersion("1.0.0.0")][m
+[1mdiff --git a/RecusionRevision/RecusionRevision.csproj b/RecusionRevision/RecusionRevision.csproj[m
+[1mnew file mode 100644[m
+[1mindex 0000000..295c454[m
+[1m--- /dev/null[m
+[1m+++ b/RecusionRevision/RecusionRevision.csproj[m
+[36m@@ -0,0 +1,58 @@[m
+[32m+[m[32m﻿<?xml version="1.0" encoding="utf-8"?>[m
+[32m+[m[32m<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">[m
+[32m+[m[32m  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />[m
+[32m+[m[32m  <PropertyGroup>[m
+[32m+[m[32m    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>[m
+[32m+[m[32m    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>[m
+[32m+[m[32m    <ProjectGuid>{400E30A2-8C78-49DB-AED5-0D2EE8A92517}</ProjectGuid>[m
+[32m+[m[32m    <OutputType>Exe</OutputType>[m
+[32m+[m[32m    <AppDesignerFolder>Properties</AppDesignerFolder>[m
+[32m+[m[32m    <RootNamespace>RecusionRevision</RootNamespace>[m
+[32m+[m[32m    <AssemblyName>RecusionRevision</AssemblyName>[m
+[32m+[m[32m    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>[m
+[32m+[m[32m    <FileAlignment>512</FileAlignment>[m
+[32m+[m[32m  </PropertyGroup>[m
+[32m+[m[32m  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">[m
+[32m+[m[32m    <PlatformTarget>AnyCPU</PlatformTarget>[m
+[32m+[m[32m    <DebugSymbols>true</DebugSymbols>[m
+[32m+[m[32m    <DebugType>full</D
